@@ -2,103 +2,191 @@ import React, { useContext, useState, useRef, useEffect } from 'react';
 import { ChatModeContext } from '../context/ChatModeContext';
 import { sendChatMessage } from '../api';
 import Message from './Message';
-import SuggestionButtons from './SuggestionButtons';
-import { ArrowLeft, Send, Bot } from 'lucide-react';
 
-export default function ChatBox() {
-  const { mode, switchMode, messages, addMessage, isLoading, setIsLoading } = useContext(ChatModeContext);
+export default function ChatBox({ pal, brand, suggested }) {
+  const { mode, messages, addMessage, isLoading, setIsLoading } = useContext(ChatModeContext);
   const [input, setInput] = useState('');
-  const messagesEndRef = useRef(null);
+  const scrollRef = useRef(null);
 
-  // Auto scroll xuống cuối
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  }, [messages, isLoading]);
 
-  // Cấu hình màu sắc theo Mode
-  const isUIT = mode === 'uit';
-  const themeColor = isUIT ? 'bg-blue-600' : 'bg-emerald-600';
-  const title = isUIT ? 'Hành trình UIT' : 'Hành trình Khoa CNPM';
-
-  const handleSend = async (textToSend) => {
-    if (!textToSend.trim()) return;
-
+  const handleSend = async (q) => {
+    if (!q.trim() || isLoading) return;
     setInput('');
-    addMessage({ text: textToSend, sender: 'user', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) });
-
+    addMessage({ role: 'user', text: q });
     setIsLoading(true);
-    const data = await sendChatMessage(textToSend, mode); // Gửi kèm mode hiện tại
+    const data = await sendChatMessage(q, mode);
     setIsLoading(false);
-
     if (data) {
       addMessage({
         id: data.message_id,
+        role: 'bot',
         text: data.answer,
-        sender: 'bot',
-        question: textToSend,
+        question: q,
         suggestions: data.suggestions,
         sources: data.sources,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       });
     }
   };
 
+  const hasMessages = messages.length > 0;
+
   return (
-    <div className="flex flex-col h-full bg-gray-50">
-      {/* Header */}
-      <div className={`${themeColor} text-white px-4 py-3 flex items-center shadow-md`}>
-        <button onClick={() => switchMode('welcome')} className="mr-3 hover:bg-white/20 p-1 rounded-full">
-          <ArrowLeft size={20} />
-        </button>
-        <div className="bg-white p-1 rounded-full mr-2">
-          <Bot size={20} className={isUIT ? "text-blue-600" : "text-emerald-600"} />
+    <section style={{
+      background: pal.isDark ? pal.panel : '#ffffff',
+      borderRadius: 20,
+      border: `1px solid ${pal.accent}${pal.isDark ? '30' : '22'}`,
+      minHeight: 580, display: 'flex', flexDirection: 'column', overflow: 'hidden',
+      boxShadow: pal.isDark
+        ? `0 30px 80px -40px ${pal.accent}80`
+        : '0 30px 80px -40px rgba(29,78,216,0.35)',
+    }}>
+      {/* Panel header */}
+      <div style={{
+        padding: '14px 22px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        borderBottom: `1px solid ${pal.accent}${pal.isDark ? '20' : '15'}`,
+        background: pal.isDark ? 'transparent' : pal.soft + '60',
+        flexShrink: 0,
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', background: pal.warm, boxShadow: `0 0 12px ${pal.warm}` }}/>
+          <div style={{ fontSize: 13, fontWeight: 600, color: pal.ink }}>{brand.botName}</div>
+          <div style={{ fontSize: 11, color: pal.mute, padding: '2px 8px', borderRadius: 99, background: `${pal.accent}15`, border: `1px solid ${pal.accent}30` }}>
+            {brand.botBadge}
+          </div>
         </div>
-        <h2 className="font-semibold">{title}</h2>
+        <div style={{ fontSize: 11, color: pal.mute, fontFamily: "'JetBrains Mono', monospace" }}>
+          {brand.version}
+        </div>
       </div>
 
-      {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {/* Câu chào mừng */}
-        {messages.length === 0 && (
-          <div className="text-center text-gray-500 text-sm mt-4">
-            Chào mừng bạn đến với {title}. Hãy đặt câu hỏi hoặc chọn gợi ý bên dưới nhé!
-          </div>
+      {/* Messages / empty state */}
+      <div ref={scrollRef} style={{
+        flex: 1, overflowY: 'auto', padding: '28px 28px 8px',
+        scrollbarWidth: 'thin', scrollbarColor: `${pal.accent}40 transparent`,
+      }}>
+        {!hasMessages && (
+          <EmptyState pal={pal} mode={mode} suggested={suggested} onAsk={handleSend} />
         )}
 
-        {messages.map((msg, idx) => (
-          <Message key={idx} msg={msg} themeColor={isUIT ? 'text-blue-600' : 'text-emerald-600'} />
+        {messages.map((msg, i) => (
+          <Message key={i} msg={msg} pal={pal} brand={brand} onChip={handleSend} />
         ))}
 
-        {isLoading && (
-          <div className="flex text-gray-500 items-center"><Bot size={16} className="mr-2 animate-bounce" /> Đang suy nghĩ...</div>
-        )}
-        <div ref={messagesEndRef} />
+        {isLoading && <TypingIndicator pal={pal} />}
       </div>
 
-      {/* Suggestions Box (Nếu có) */}
-      {messages.length > 0 && messages[messages.length - 1].suggestions && (
-        <SuggestionButtons
-          suggestions={messages[messages.length - 1].suggestions}
-          onSelect={(text) => handleSend(text)}
-          isUIT={isUIT}
-        />
-      )}
-
       {/* Input */}
-      <div className="p-4 bg-white border-t">
-        <form onSubmit={(e) => { e.preventDefault(); handleSend(input); }} className="flex relative">
+      <div style={{ padding: '14px 18px 18px', borderTop: `1px solid ${pal.accent}${pal.isDark ? '20' : '15'}`, flexShrink: 0 }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 10,
+          padding: '6px 6px 6px 16px', borderRadius: 14,
+          background: pal.soft, border: `1px solid ${pal.accent}35`,
+        }}>
           <input
-            type="text"
-            maxLength={500}
-            placeholder="Nhập câu hỏi của bạn..."
-            className="flex-1 border border-gray-300 rounded-full py-3 px-4 pr-12 outline-none focus:border-blue-500"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={e => setInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && handleSend(input)}
+            placeholder={brand.placeholder}
+            style={{
+              flex: 1, background: 'transparent', border: 'none', outline: 'none',
+              color: pal.ink, fontSize: 14, padding: '10px 0', fontFamily: 'inherit',
+            }}
           />
-          <button type="submit" className={`absolute right-1 top-1 bottom-1 ${themeColor} text-white p-2 rounded-full hover:opacity-80`}>
-            <Send size={18} />
+          <button onClick={() => handleSend(input)} style={{
+            padding: '10px 18px', borderRadius: 10, border: 'none',
+            background: `linear-gradient(135deg, ${pal.accent}, ${pal.accent2})`,
+            color: '#fff', fontWeight: 600, fontSize: 13, cursor: 'pointer',
+            boxShadow: `0 8px 24px -8px ${pal.accent}`,
+            display: 'flex', alignItems: 'center', gap: 6, fontFamily: 'inherit',
+            transition: 'opacity .15s',
+          }}>
+            Kể tiếp <span style={{ fontSize: 14 }}>→</span>
           </button>
-        </form>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, fontSize: 11, color: pal.mute }}>
+          <div>↵ Enter để gửi</div>
+          <div>{mode === 'uit' ? 'UIT · 2006—2026' : 'Khoa CNPM · 2008—2026'}</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EmptyState({ pal, mode, suggested, onAsk }) {
+  return (
+    <div style={{ textAlign: 'center', padding: '32px 12px 16px' }}>
+      <div style={{
+        display: 'inline-block', padding: '6px 14px', borderRadius: 99,
+        background: `${pal.warm}15`, border: `1px solid ${pal.warm}40`, color: pal.warm,
+        fontSize: 11, letterSpacing: '0.2em', fontWeight: 700, marginBottom: 20,
+      }}>BẮT ĐẦU HÀNH TRÌNH</div>
+
+      <div style={{ fontFamily: "'Fraunces', serif", fontSize: 22, lineHeight: 1.4, color: pal.ink, maxWidth: 500, margin: '0 auto 8px', letterSpacing: '-0.01em' }}>
+        "Mỗi câu hỏi của bạn sẽ{' '}
+        <em style={{ color: pal.warm, fontStyle: 'italic' }}>mở ra một chương</em>
+        {' '}trong cuốn sách {mode === 'uit' ? '20' : '18'} năm."
+      </div>
+      <div style={{ fontSize: 13, color: pal.mute, marginBottom: 24 }}>
+        Chọn một chủ đề bên dưới, hoặc tự gõ câu hỏi của bạn.
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, maxWidth: 560, margin: '0 auto', textAlign: 'left' }}>
+        {suggested.map((s, i) => (
+          <PromptCard key={i} s={s} pal={pal} onClick={() => onAsk(s.q)} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PromptCard({ s, pal, onClick }) {
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <button onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: 'flex', alignItems: 'center', gap: 12,
+        padding: '14px 16px', borderRadius: 12,
+        background: pal.soft,
+        border: `1px solid ${hovered ? pal.warm : pal.accent + '25'}`,
+        color: pal.ink, fontSize: 13.5, cursor: 'pointer',
+        textAlign: 'left', fontFamily: 'inherit',
+        transform: hovered ? 'translateY(-1px)' : 'translateY(0)',
+        transition: 'all .2s',
+      }}>
+      <div style={{ width: 32, height: 32, borderRadius: 8, background: `${pal.accent}20`, color: pal.warm, display: 'grid', placeItems: 'center', fontSize: 14, flexShrink: 0, fontWeight: 600 }}>
+        {s.icon}
+      </div>
+      <div style={{ lineHeight: 1.35 }}>{s.label}</div>
+    </button>
+  );
+}
+
+function TypingIndicator({ pal }) {
+  return (
+    <div style={{ display: 'flex', gap: 12, marginBottom: 18, alignItems: 'center' }}>
+      <div style={{
+        width: 36, height: 36, borderRadius: '50%',
+        background: `conic-gradient(from 200deg, ${pal.accent}, ${pal.gold}, ${pal.accent2}, ${pal.accent})`,
+        animation: 'spin 3s linear infinite',
+        display: 'grid', placeItems: 'center', flexShrink: 0,
+      }}>
+        <div style={{ width: 30, height: 30, borderRadius: '50%', background: pal.panel }}/>
+      </div>
+      <div style={{ display: 'flex', gap: 5, padding: '10px 16px', borderRadius: 16, background: pal.panel, border: `1px solid ${pal.accent}25` }}>
+        {[0, 1, 2].map(i => (
+          <div key={i} style={{
+            width: 6, height: 6, borderRadius: '50%', background: pal.accent,
+            animation: `bounce 1.2s ${i * 0.15}s infinite ease-in-out`,
+          }}/>
+        ))}
+        <div style={{ marginLeft: 6, fontSize: 12, color: pal.mute, alignSelf: 'center', fontStyle: 'italic' }}>
+          đang nhớ lại câu chuyện…
+        </div>
       </div>
     </div>
   );

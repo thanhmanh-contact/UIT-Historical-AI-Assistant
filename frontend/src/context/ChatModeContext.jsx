@@ -3,15 +3,17 @@ import React, { createContext, useState } from 'react';
 export const ChatModeContext = createContext();
 
 export const ChatModeProvider = ({ children }) => {
-  // mode có thể là: 'welcome', 'uit', 'cnpm'
-  const [mode, setMode] = useState('welcome'); 
+  const [mode, setMode] = useState('uit');
   const [messages, setMessages] = useState([]);
-  const[isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [focusYear, setFocusYear] = useState('2006');
 
   const switchMode = (newMode) => {
+    if (newMode === mode) return;
     setMode(newMode);
-    // Reset tin nhắn khi đổi nhánh (Tuỳ logic của em, có thể giữ lại)
-    if (newMode === 'welcome') setMessages([]); 
+    setMessages([]);
+    setIsLoading(false);
+    setFocusYear(newMode === 'uit' ? '2006' : '2008');
   };
 
   const addMessage = (msg) => {
@@ -19,7 +21,12 @@ export const ChatModeProvider = ({ children }) => {
   };
 
   return (
-    <ChatModeContext.Provider value={{ mode, switchMode, messages, addMessage, isLoading, setIsLoading }}>
+    <ChatModeContext.Provider value={{
+      mode, switchMode,
+      messages, addMessage,
+      isLoading, setIsLoading,
+      focusYear, setFocusYear,
+    }}>
       {children}
     </ChatModeContext.Provider>
   );
