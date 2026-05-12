@@ -1,69 +1,94 @@
 import React from 'react';
-import { Bot, ExternalLink } from 'lucide-react';
-import FeedbackButtons from './FeedbackButtons'; // Import component vừa tạo
+import FeedbackButtons from './FeedbackButtons';
 
-export default function Message({ msg, themeColor }) {
-    const isUser = msg.sender === 'user';
-
-    // ----- UI CHO TIN NHẮN CỦA USER -----
-    if (isUser) {
-        return (
-            <div className="flex justify-end mb-4">
-                <div className="max-w-[80%] bg-blue-100 text-gray-800 rounded-2xl rounded-tr-sm px-4 py-2 shadow-sm">
-                    <p className="text-sm">{msg.text}</p>
-                    <span className="text-[10px] text-gray-500 block text-right mt-1">{msg.time}</span>
-                </div>
-            </div>
-        );
-    }
-
-    // ----- UI CHO TIN NHẮN CỦA BOT -----
-    // Lấy màu nền nhạt cho avatar bot dựa theo theme hiện tại
-    const bgSoftColor = themeColor.includes('blue') ? 'bg-blue-100' : 'bg-emerald-100';
-
+export default function Message({ msg, pal, brand, onChip }) {
+  if (msg.role === 'user') {
     return (
-        <div className="flex justify-start mb-6">
-            {/* Bot Avatar */}
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 shrink-0 mt-1 ${bgSoftColor}`}>
-                <Bot size={18} className={themeColor} />
-            </div>
-
-            {/* Bot Content */}
-            <div className="max-w-[85%]">
-                <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm border border-gray-100">
-                    <p className="text-sm text-gray-700 whitespace-pre-wrap leading-relaxed">{msg.text}</p>
-
-                    {/* Render Nguồn trích dẫn (Nếu có) */}
-                    {msg.sources && msg.sources.length > 0 && (
-                        <div className="mt-3 pt-2 border-t border-gray-100">
-                            <p className="text-xs font-semibold text-gray-400 mb-1 flex items-center">
-                                <ExternalLink size={12} className="mr-1" /> Nguồn tham khảo:
-                            </p>
-                            <ul className="space-y-1">
-                                {msg.sources.map((src, i) => (
-                                    <li key={i}>
-                                        <a href={src.url} target="_blank" rel="noopener noreferrer"
-                                            className={`text-xs hover:underline flex items-center gap-1 ${themeColor}`}>
-                                            - {src.url.replace(/^https?:\/\//, '')}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    <span className="text-[10px] text-gray-400 block mt-2">{msg.time}</span>
-                </div>
-
-                {/* NHÚNG COMPONENT FEEDBACK VÀO ĐÂY */}
-                {msg.id && (
-                    <FeedbackButtons
-                        messageId={msg.id}
-                        themeColor={themeColor}
-                        question={msg.question || ""}
-                        answer={msg.text || ""}
-                    />
-                )}
-            </div>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 14 }}>
+        <div style={{
+          maxWidth: '75%', padding: '11px 16px', borderRadius: '18px 18px 4px 18px',
+          background: `linear-gradient(135deg, ${pal.accent}, ${pal.accent2})`,
+          color: '#fff', fontSize: 14.5, lineHeight: 1.55,
+          boxShadow: `0 10px 30px -10px ${pal.accent}60`,
+        }}>
+          {msg.text}
         </div>
+      </div>
     );
+  }
+
+  return (
+    <div style={{ display: 'flex', gap: 12, marginBottom: 18, alignItems: 'flex-start' }}>
+      <div style={{
+        flexShrink: 0, width: 36, height: 36, borderRadius: '50%',
+        background: `conic-gradient(from 200deg, ${pal.accent}, ${pal.gold}, ${pal.accent2}, ${pal.accent})`,
+        display: 'grid', placeItems: 'center', marginTop: 2,
+        boxShadow: `0 4px 16px -4px ${pal.accent}80`, padding: 2,
+      }}>
+        <img src="/uit.jpg" alt=""
+          style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', background: pal.panel, padding: 2 }}/>
+      </div>
+
+      <div style={{ maxWidth: '82%', minWidth: 0 }}>
+        <div style={{ fontSize: 11, color: pal.mute, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 6, fontWeight: 600 }}>
+          {brand.botName}
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{
+            padding: '16px 18px', borderRadius: '4px 16px 16px 16px',
+            background: `linear-gradient(180deg, ${pal.soft}, ${pal.panel})`,
+            border: `1px solid ${pal.accent}25`,
+            boxShadow: pal.isDark ? 'none' : '0 6px 24px -16px rgba(10,26,58,0.35)',
+            color: pal.ink, lineHeight: 1.75, fontSize: 14.5,
+            fontFamily: "'Be Vietnam Pro', sans-serif",
+            animation: 'fadeUp .5s both',
+            position: 'relative',
+          }}>
+            <div style={{
+              position: 'absolute', top: -8, left: 18,
+              padding: '1px 8px', background: pal.gold,
+              color: pal.isDark ? pal.bg : '#fff',
+              fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', borderRadius: 4,
+            }}>TRẢ LỜI</div>
+            <p style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{msg.text}</p>
+          </div>
+
+          {msg.suggestions && msg.suggestions.length > 0 && (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 2, animation: 'fadeUp .5s 0.25s both', opacity: 0 }}>
+              {msg.suggestions.map((c, i) => (
+                <button key={i} onClick={() => onChip && onChip(c)} style={{
+                  padding: '7px 12px', borderRadius: 99,
+                  background: 'transparent', border: `1px solid ${pal.accent}50`,
+                  color: pal.accent, fontSize: 12.5, cursor: 'pointer',
+                  fontWeight: 500, fontFamily: 'inherit',
+                  transition: 'all .15s',
+                }}>↳ {c}</button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {msg.sources && msg.sources.length > 0 && (
+          <div style={{ marginTop: 8, fontSize: 11, color: pal.mute }}>
+            {msg.sources.map((src, i) => (
+              <a key={i} href={src.url} target="_blank" rel="noopener noreferrer"
+                style={{ color: pal.accent2, display: 'block', marginBottom: 2, textDecoration: 'none' }}>
+                ↗ {src.url.replace(/^https?:\/\//, '')}
+              </a>
+            ))}
+          </div>
+        )}
+
+        {msg.id && (
+          <FeedbackButtons
+            messageId={msg.id}
+            themeColor={pal.isDark ? 'text-blue-400' : 'text-blue-600'}
+            question={msg.question || ''}
+            answer={msg.text || ''}
+          />
+        )}
+      </div>
+    </div>
+  );
 }
