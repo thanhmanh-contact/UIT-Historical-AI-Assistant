@@ -1,0 +1,894 @@
+2026-05-05 23:10:37 - uit_chatbot - ERROR - ⚠️ Lỗi load DB: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\third-party\faiss\faiss\impl\io.cpp:70: Error: 'f' failed: could not open G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\data\vector_db\uit_index\index.faiss for reading: No such file or directory
+2026-05-05 23:10:39 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 18:04:21 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 18:04:24 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 18:09:15 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 18:09:18 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 18:09:34 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 18:09:37 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 18:11:24 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 18:11:27 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 18:13:34 - uit_chatbot - INFO - User Request: Trường UIT thành lập năm nào? | Scope: uit
+2026-05-06 18:13:34 - uit_chatbot - ERROR - Internal System Error: 'Settings' object has no attribute 'MAX_INPUT_LENGTH'
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 30, in chat_with_bot
+    safe_message = clean_and_validate_input(request.message)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\utils\sanitize.py", line 22, in clean_and_validate_input
+    if len(clean_text) > settings.MAX_INPUT_LENGTH:
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\pydantic\main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'MAX_INPUT_LENGTH'
+2026-05-06 22:10:16 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:10:19 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:11:21 - uit_chatbot - INFO - User Request: UIT thành lập năm bao nhiêu | Scope: auto
+2026-05-06 22:11:21 - uit_chatbot - ERROR - Internal System Error: 'Settings' object has no attribute 'MAX_INPUT_LENGTH'
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 30, in chat_with_bot
+    safe_message = clean_and_validate_input(request.message)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\utils\sanitize.py", line 22, in clean_and_validate_input
+    if len(clean_text) > settings.MAX_INPUT_LENGTH:
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\pydantic\main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'MAX_INPUT_LENGTH'
+2026-05-06 22:14:52 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:14:55 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:19:50 - uit_chatbot - INFO - User Request: UIT thành lập năm bao nhiêu | Scope: auto
+2026-05-06 22:19:51 - uit_chatbot - ERROR - Internal System Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-06 22:20:07 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:20:10 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:20:44 - uit_chatbot - INFO - User Request: UIT thành lập năm nào | Scope: auto
+2026-05-06 22:20:49 - uit_chatbot - ERROR - Internal System Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-06 22:24:37 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:24:40 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:25:00 - uit_chatbot - INFO - User Request: UIT thành lập năm nào | Scope: auto
+2026-05-06 22:25:01 - uit_chatbot - ERROR - Internal System Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-06 22:38:53 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:38:56 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:39:19 - uit_chatbot - INFO - User Request: UIT thành lập năm mấy | Scope: auto
+2026-05-06 22:39:21 - uit_chatbot - ERROR - Internal System Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 35.977926982s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '35s'}]}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 35.977926982s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '35s'}]}}
+2026-05-06 22:39:29 - uit_chatbot - INFO - User Request: UIT thành lập năm mấy | Scope: auto
+2026-05-06 22:39:30 - uit_chatbot - ERROR - Internal System Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 27.111228797s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '27s'}]}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 27.111228797s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '27s'}]}}
+2026-05-06 22:39:49 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:39:52 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:40:10 - uit_chatbot - INFO - User Request: UIT thành lập năm mấy | Scope: auto
+2026-05-06 22:40:12 - uit_chatbot - ERROR - Internal System Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 44.990443882s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '44s'}]}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 44.990443882s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '44s'}]}}
+2026-05-06 22:44:13 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:44:16 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:44:35 - uit_chatbot - INFO - User Request: UIT thành lập năm mấy | Scope: auto
+2026-05-06 22:44:36 - uit_chatbot - ERROR - Internal System Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 20.652029856s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '20s'}]}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 20.652029856s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '20s'}]}}
+2026-05-06 22:45:38 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:45:41 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:46:36 - uit_chatbot - INFO - User Request: UIT thành lập năm nào | Scope: auto
+2026-05-06 22:46:38 - uit_chatbot - ERROR - Internal System Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 19.179187184s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '19s'}]}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 19.179187184s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '19s'}]}}
+2026-05-06 22:49:20 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:49:23 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:49:38 - uit_chatbot - INFO - User Request: uit thành lập | Scope: auto
+2026-05-06 22:49:40 - uit_chatbot - ERROR - Internal System Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 17.257502985s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '17s'}]}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 17.257502985s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '17s'}]}}
+2026-05-06 22:52:27 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:52:30 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:52:38 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:52:41 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:52:52 - uit_chatbot - INFO - User Request: string | Scope: auto
+2026-05-06 22:52:53 - uit_chatbot - ERROR - Internal System Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 27, in generate_answer
+    answer = generate_text(query, context, scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\llm.py", line 26, in generate_text
+    response = client.models.generate_content(
+        model=settings.LLM_MODEL,
+    ...<5 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6331, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4767, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-06 22:55:52 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:55:55 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:57:40 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 22:57:43 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 22:58:06 - uit_chatbot - INFO - User Request: string | Scope: auto
+2026-05-06 22:58:08 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 22:58:35 - uit_chatbot - INFO - User Request: UIT thành lập năm nào | Scope: auto
+2026-05-06 22:58:36 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:00:35 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:00:39 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:00:52 - uit_chatbot - INFO - User Request: string | Scope: auto
+2026-05-06 23:00:53 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:01:06 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:01:09 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:01:18 - uit_chatbot - INFO - User Request: hello uit | Scope: auto
+2026-05-06 23:01:19 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:01:21 - uit_chatbot - INFO - User Request: hello uit | Scope: auto
+2026-05-06 23:01:22 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:05:00 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:05:04 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:05:35 - uit_chatbot - INFO - User Request: hello uit | Scope: auto
+2026-05-06 23:05:35 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:05:40 - uit_chatbot - INFO - User Request: hello uit | Scope: auto
+2026-05-06 23:05:43 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:12:28 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:12:31 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:12:31 - uit_chatbot - INFO - User Request: hello uit | Scope: auto
+2026-05-06 23:12:33 - uit_chatbot - INFO - AI Response: Dạ, bộ não AI của em đang bận một chút. Bạn thử lạ...
+2026-05-06 23:12:49 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:12:52 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:13:04 - uit_chatbot - INFO - User Request: uit | Scope: auto
+2026-05-06 23:13:05 - uit_chatbot - INFO - AI Response: Dạ, bộ não AI của em đang bận một chút. Bạn thử lạ...
+2026-05-06 23:14:15 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:14:18 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:14:28 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:14:31 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:14:42 - uit_chatbot - INFO - User Request: hello uit | Scope: auto
+2026-05-06 23:14:44 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:16:07 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:16:10 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:16:19 - uit_chatbot - INFO - User Request: string | Scope: auto
+2026-05-06 23:16:20 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:16:24 - uit_chatbot - INFO - User Request: string | Scope: auto
+2026-05-06 23:16:26 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-06 23:19:40 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:19:44 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:19:49 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:19:53 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:19:59 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:20:02 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:20:38 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:20:41 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:20:48 - uit_chatbot - INFO - User Request: string | Scope: auto
+2026-05-06 23:20:48 - uit_chatbot - ERROR - Internal System Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\api\chat.py", line 33, in chat_with_bot
+    rag_result = generate_answer(safe_message, request.scope)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\rag.py", line 23, in generate_answer
+    query_vector = get_embedding(query)
+  File "G:\CA NHAN\UIT Historical AI Assistant\UIT-Historical-AI-Assistant\backend\app\services\embedding.py", line 15, in get_embedding
+    response = client.models.embed_content(
+        model=settings.EMBEDDING_MODEL,
+    ...<3 lines>...
+        )
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 6191, in embed_content
+    return self._embed_content(model=model, contents=contents, config=config)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\models.py", line 4996, in _embed_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1605, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1398, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\_api_client.py", line 1375, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-06 23:21:27 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:21:31 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-06 23:21:38 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-06 23:21:41 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 09:25:26 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 09:25:29 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 09:25:47 - uit_chatbot - INFO - User Request: uit | Scope: auto
+2026-05-07 09:25:48 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 09:31:43 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 09:31:46 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 09:31:52 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 09:31:55 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 09:47:22 - uit_chatbot - INFO - User Request: uit | Scope: auto
+2026-05-07 09:47:25 - uit_chatbot - INFO - AI Response: UIT là viết tắt của Trường Đại học Công nghệ Thông...
+2026-05-07 09:48:19 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: auto
+2026-05-07 09:48:22 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006 ✨....
+2026-05-07 10:53:00 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 10:53:03 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 10:53:27 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: auto
+2026-05-07 10:53:31 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006 bạn nhé! ✨...
+2026-05-07 10:54:04 - uit_chatbot - INFO - Đã nhận feedback: string cho tin nhắn string
+2026-05-07 10:59:45 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: auto
+2026-05-07 10:59:48 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006. ✨...
+2026-05-07 13:24:13 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 13:24:16 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 13:26:19 - uit_chatbot - INFO - User Request: uit thành lập năm mấy | Scope: auto
+2026-05-07 13:26:22 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006 ✨....
+2026-05-07 13:26:32 - uit_chatbot - INFO - Đã nhận feedback: like cho tin nhắn 33906494-42e5-4915-8cd0-22d38d134778
+2026-05-07 13:26:44 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: uit
+2026-05-07 13:26:48 - uit_chatbot - INFO - AI Response: UIT được thành lập vào ngày 08/06/2006 theo Quyết ...
+2026-05-07 13:26:54 - uit_chatbot - INFO - User Request: Chuyển sang CNPM 🔄 | Scope: uit
+2026-05-07 13:26:57 - uit_chatbot - INFO - AI Response: Chào bạn! ✨ Dựa vào ngữ cảnh được cung cấp, mình c...
+2026-05-07 13:27:56 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: uit
+2026-05-07 13:28:00 - uit_chatbot - INFO - AI Response: Chào bạn! ✨ Dựa vào ngữ cảnh được cung cấp, mình c...
+2026-05-07 13:28:27 - uit_chatbot - INFO - User Request: công nghệ phần mềm là gì | Scope: cnpm
+2026-05-07 13:28:29 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 13:32:50 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: cnpm
+2026-05-07 13:32:56 - uit_chatbot - INFO - AI Response: Đời sống sinh viên tại Khoa CNPM rất sôi nổi với c...
+2026-05-07 13:33:25 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-07 13:33:27 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 13:33:53 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-07 13:33:55 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006. ✨...
+2026-05-07 13:36:02 - uit_chatbot - INFO - User Request: cnpm thành lập năm nào | Scope: cnpm
+2026-05-07 13:36:05 - uit_chatbot - INFO - AI Response: Khoa CNPM được thành lập vào năm 2007 ✨....
+2026-05-07 13:36:08 - uit_chatbot - INFO - User Request: Chuyển sang UIT 🔄 | Scope: cnpm
+2026-05-07 13:36:10 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 13:36:14 - uit_chatbot - INFO - User Request: Chuyển sang UIT 🔄 | Scope: cnpm
+2026-05-07 13:36:16 - uit_chatbot - INFO - AI Response: Chào bạn ✨! Mình chưa có thông tin về việc chuyển ...
+2026-05-07 13:36:29 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: cnpm
+2026-05-07 13:36:31 - uit_chatbot - INFO - AI Response: Đời sống sinh viên tại khoa CNPM rất sôi nổi với c...
+2026-05-07 13:38:07 - uit_chatbot - INFO - User Request: Thành tựu nổi bật | Scope: cnpm
+2026-05-07 13:38:11 - uit_chatbot - INFO - AI Response: Chào bạn, mình chưa có thông tin về thành tựu nổi ...
+2026-05-07 14:27:42 - uit_chatbot - INFO - User Request: uit có giỏi không | Scope: uit
+2026-05-07 14:27:45 - uit_chatbot - INFO - AI Response: Chào bạn! ✨
+
+Dựa trên ngữ cảnh, UIT nổi tiếng với ...
+2026-05-07 15:25:56 - uit_chatbot - INFO - User Request: uit thanh lap nam nao | Scope: uit
+2026-05-07 15:25:58 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006 ✨....
+2026-05-07 15:26:05 - uit_chatbot - INFO - User Request: Thành tựu nổi bật | Scope: uit
+2026-05-07 15:26:08 - uit_chatbot - INFO - AI Response: UIT nổi tiếng với các thành tích quốc tế, đặc biệt...
+2026-05-07 18:56:35 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 18:56:38 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 18:57:46 - uit_chatbot - INFO - User Request: uit thanh lap nam nao | Scope: uit
+2026-05-07 18:57:48 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 18:58:15 - uit_chatbot - INFO - User Request: tom tat lich su uit | Scope: uit
+2026-05-07 18:58:19 - uit_chatbot - INFO - AI Response: Trường Đại học Công nghệ Thông tin (UIT) được thàn...
+2026-05-07 21:35:42 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 21:35:45 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 21:36:18 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: auto
+2026-05-07 21:36:23 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006. ✨...
+2026-05-07 21:36:38 - uit_chatbot - INFO - User Request: khoa công nghệ phần mềm thành lập năm nào | Scope: auto
+2026-05-07 21:36:41 - uit_chatbot - INFO - AI Response: Khoa Công nghệ Phần mềm được thành lập vào năm 200...
+2026-05-07 21:36:44 - uit_chatbot - INFO - User Request: Chuyển sang UIT 🔄 | Scope: cnpm
+2026-05-07 21:36:48 - uit_chatbot - INFO - AI Response: Chào bạn ✨! Dựa vào ngữ cảnh được cung cấp, mình c...
+2026-05-07 21:36:53 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: cnpm
+2026-05-07 21:36:56 - uit_chatbot - INFO - AI Response: Khoa Công nghệ Phần mềm (CNPM) được thành lập vào ...
+2026-05-07 21:37:00 - uit_chatbot - INFO - User Request: Thành tựu nổi bật | Scope: cnpm
+2026-05-07 21:37:03 - uit_chatbot - INFO - AI Response: Chào bạn ✨. Dựa vào ngữ cảnh, mình chưa có thông t...
+2026-05-07 21:37:07 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: cnpm
+2026-05-07 21:37:10 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 21:37:23 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: cnpm
+2026-05-07 21:37:28 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 21:37:44 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: cnpm
+2026-05-07 21:37:47 - uit_chatbot - INFO - AI Response: Khoa Công nghệ Phần mềm (CNPM) được thành lập vào ...
+2026-05-07 21:37:52 - uit_chatbot - INFO - Đã nhận feedback: report cho tin nhắn 087e5b57-413e-44c2-8572-3d27de15ebfe
+2026-05-07 21:38:01 - uit_chatbot - INFO - Đã nhận feedback: report cho tin nhắn ea71a954-6c6a-41cc-921c-2714678a0cf6
+2026-05-07 21:38:04 - uit_chatbot - INFO - Đã nhận feedback: report cho tin nhắn eb4a66f5-6da4-4fe9-8b93-c18685e902c5
+2026-05-07 21:38:15 - uit_chatbot - INFO - User Request: hello | Scope: cnpm
+2026-05-07 21:38:20 - uit_chatbot - INFO - AI Response: Chào bạn! ✨...
+2026-05-07 21:38:24 - uit_chatbot - INFO - Đã nhận feedback: report cho tin nhắn b6c6399c-dec0-4125-85d0-0eb9f2dcb66e
+2026-05-07 21:41:51 - uit_chatbot - INFO - User Request: hi | Scope: auto
+2026-05-07 21:41:55 - uit_chatbot - INFO - AI Response: Chào bạn! ✨...
+2026-05-07 21:42:16 - uit_chatbot - INFO - Đã nhận feedback: report cho tin nhắn a8d98712-9087-4619-9066-b414a82070ee
+2026-05-07 22:06:24 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 22:06:27 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 22:14:38 - uit_chatbot - INFO - User Request: uit thanh lap nam may | Scope: uit
+2026-05-07 22:14:55 - uit_chatbot - INFO - AI Response: UIT được thành lập vào năm 2006 ✨....
+2026-05-07 22:15:18 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: uit
+2026-05-07 22:15:21 - uit_chatbot - INFO - AI Response: UIT được thành lập vào ngày 08/06/2006 theo Quyết ...
+2026-05-07 22:15:26 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: uit
+2026-05-07 22:15:30 - uit_chatbot - INFO - AI Response: Chào bạn, mình chưa có thông tin về đời sống sinh ...
+2026-05-07 22:24:01 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: uit
+2026-05-07 22:24:06 - uit_chatbot - INFO - AI Response: Dấu mốc lịch sử quan trọng của UIT là được thành l...
+2026-05-07 22:25:35 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 22:25:38 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 22:26:23 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-07 22:26:27 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 22:27:03 - uit_chatbot - INFO - User Request: Thành tựu nổi bật | Scope: uit
+2026-05-07 22:27:07 - uit_chatbot - INFO - AI Response: UIT nổi tiếng với các thành tích quốc tế, đặc biệt...
+2026-05-07 22:30:10 - uit_chatbot - INFO - User Request: xin chao | Scope: uit
+2026-05-07 22:30:17 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 22:30:30 - uit_chatbot - INFO - User Request: hello | Scope: uit
+2026-05-07 22:30:34 - uit_chatbot - INFO - AI Response: Chào bạn! ✨...
+2026-05-07 22:35:10 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 22:35:13 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 22:35:41 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 22:35:44 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 22:36:03 - uit_chatbot - INFO - User Request: cnpm thành lập năm mấy | Scope: auto
+2026-05-07 22:36:05 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 22:49:28 - uit_chatbot - INFO - User Request: uuit | Scope: uit
+2026-05-07 22:49:56 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 22:52:56 - uit_chatbot - INFO - Đã nhận feedback 'dislike' cho tin nhắn 754ff50d-1151-409c-8141-fcaf4ca9dab5
+2026-05-07 22:53:23 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: uit
+2026-05-07 22:54:52 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 22:55:03 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: uit
+2026-05-07 22:55:06 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 22:56:04 - uit_chatbot - INFO - Đã nhận feedback 'like' cho tin nhắn 80452104-4765-40fc-ae22-08441cb731b3
+2026-05-07 22:57:23 - uit_chatbot - INFO - User Request: uit | Scope: cnpm
+2026-05-07 22:57:24 - uit_chatbot - INFO - AI Response: Dạ, mình đang gặp chút sự cố kết nối với bộ não AI...
+2026-05-07 22:57:43 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-07 22:57:46 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-07 22:57:53 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: cnpm
+2026-05-07 22:58:04 - uit_chatbot - INFO - AI Response: Khoa Công nghệ Phần mềm (CNPM) được thành lập vào ...
+2026-05-07 22:58:13 - uit_chatbot - INFO - User Request: uit thành lập năm mấy | Scope: cnpm
+2026-05-07 22:58:19 - uit_chatbot - INFO - AI Response: Chào bạn, mình chưa có thông tin về năm thành lập ...
+2026-05-07 22:58:31 - uit_chatbot - INFO - Đã nhận feedback 'dislike' cho tin nhắn 91927086-501c-4b58-a114-cb1f54435ad1
+2026-05-07 23:07:59 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: cnpm
+2026-05-07 23:08:02 - uit_chatbot - INFO - AI Response: Đời sống sinh viên tại khoa CNPM rất sôi nổi với c...
+2026-05-07 23:08:06 - uit_chatbot - INFO - Đã nhận feedback 'like' cho tin nhắn f662b6bf-d313-4304-98a8-37d8c2114ebe
+2026-05-07 23:08:26 - uit_chatbot - INFO - User Request: Đời sống sinh viên | Scope: cnpm
+2026-05-07 23:08:29 - uit_chatbot - INFO - AI Response: Đời sống sinh viên tại khoa CNPM rất sôi nổi với c...
+2026-05-07 23:08:45 - uit_chatbot - INFO - Đã nhận feedback 'dislike' cho tin nhắn cad5cd37-189a-4823-b694-ac29a0496727
+2026-05-07 23:17:37 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: cnpm
+2026-05-07 23:17:40 - uit_chatbot - INFO - AI Response: Mình chưa có thông tin về năm thành lập của trường...
+2026-05-10 18:22:38 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 18:22:41 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 18:23:35 - uit_chatbot - INFO - User Request: UIT thành lập năm nào | Scope: uit
+2026-05-10 18:23:40 - uit_chatbot - INFO - AI Response: Tiền thân của Trường Đại học Công nghệ Thông tin (...
+2026-05-10 18:23:50 - uit_chatbot - INFO - User Request: Thành tựu nổi bật | Scope: uit
+2026-05-10 18:23:55 - uit_chatbot - INFO - AI Response: Chào bạn, UIT có nhiều thành tựu nổi bật lắm ạ!...
+2026-05-10 18:36:54 - uit_chatbot - INFO - User Request: Dấu mốc lịch sử | Scope: uit
+2026-05-10 18:37:00 - uit_chatbot - INFO - AI Response: Chào bạn ✨! Dưới đây là các dấu mốc lịch sử của Tr...
+2026-05-10 18:38:35 - uit_chatbot - INFO - Đã nhận feedback 'like' cho tin nhắn 66ba779f-69cc-4fb7-bcac-547b34536c33
+2026-05-10 18:46:04 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 18:46:07 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:04:34 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 23:04:37 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:06:20 - uit_chatbot - INFO - User Request: uit thành lập năm mấy | Scope: uit
+2026-05-10 23:06:23 - uit_chatbot - INFO - AI Response: Dạ chào bạn! ✨
+
+Hiện tại, dữ liệu của em chưa cập ...
+2026-05-10 23:09:16 - uit_chatbot - INFO - User Request: Thành tựu nổi bật | Scope: uit
+2026-05-10 23:09:19 - uit_chatbot - INFO - AI Response: Chào bạn, mình rất vui được chia sẻ về những thành...
+2026-05-10 23:18:33 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 23:18:36 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:18:47 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-10 23:18:51 - uit_chatbot - INFO - AI Response: Dạ chào bạn,
+
+Hiện tại, dữ liệu của em chưa cập nh...
+2026-05-10 23:19:16 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-10 23:19:19 - uit_chatbot - INFO - AI Response: Dạ, hiện tại dữ liệu của em chưa cập nhật thông ti...
+2026-05-10 23:24:06 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 23:24:09 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:24:29 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-10 23:24:32 - uit_chatbot - INFO - AI Response: Dạ, hiện tại dữ liệu của em chưa cập nhật thông ti...
+2026-05-10 23:37:44 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 23:37:47 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:38:54 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 23:38:57 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:39:23 - uit_chatbot - INFO - User Request: uit khai sinh vào năm nào | Scope: uit
+2026-05-10 23:39:32 - uit_chatbot - INFO - AI Response: Chào bạn, em/mình xin cung cấp thông tin về...
+2026-05-10 23:43:48 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 23:43:51 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:44:17 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-10 23:44:20 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-10 23:44:31 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-10 23:44:35 - uit_chatbot - INFO - AI Response: Chào bạn, mình rất vui được hỗ trợ bạn nhé! ✨
+
+Dựa...
+2026-05-10 23:49:41 - uit_chatbot - INFO - User Request: UIT thành lập năm nào | Scope: uit
+2026-05-10 23:49:45 - uit_chatbot - INFO - AI Response: Chào bạn, mình là trợ lý AI của Trường Đại học Côn...
+2026-05-12 11:54:06 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-12 11:54:09 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-12 11:54:38 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-12 11:54:42 - uit_chatbot - INFO - AI Response: Chào bạn, mình rất vui được hỗ trợ bạn nhé! ✨
+
+Dạ...
+2026-05-12 11:58:31 - uit_chatbot - INFO - User Request: uit là trường gù | Scope: uit
+2026-05-12 11:58:34 - uit_chatbot - INFO - AI Response: Chào bạn, mình là trợ lý AI của Trường Đại học Côn...
+2026-05-12 11:59:19 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-12 11:59:23 - uit_chatbot - INFO - AI Response: Chào bạn, mình rất vui được hỗ trợ bạn nhé! ✨
+
+Dựa...
+2026-05-12 12:00:40 - uit_chatbot - INFO - User Request: trường uit có bao nhiêu ngành | Scope: uit
+2026-05-12 12:00:44 - uit_chatbot - INFO - AI Response: Chào bạn, Trường Đại học Công nghệ Thông tin (UIT)...
+2026-05-12 12:05:53 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: auto
+2026-05-12 12:05:57 - uit_chatbot - INFO - AI Response: Chào bạn, mình xin cung cấp thông tin về quá trình...
+2026-05-12 12:09:36 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-12 12:09:41 - uit_chatbot - INFO - AI Response: Chào bạn, mình rất vui được hỗ trợ bạn nhé! ✨
+
+Dựa...
+2026-05-12 12:12:21 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-12 12:12:24 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-12 12:28:27 - uit_chatbot - INFO - ✅ Đã tải thành công 2 DB: UIT và CNPM
+2026-05-12 12:28:30 - uit_chatbot - ERROR - ⚠️ Không thể kết nối Redis. Hệ thống sẽ bỏ qua Cache. Lỗi: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-05-12 12:28:50 - uit_chatbot - INFO - User Request: uit thành lập năm nào | Scope: uit
+2026-05-12 12:28:54 - uit_chatbot - INFO - AI Response: Chào bạn, mình rất vui được hỗ trợ bạn tìm hiểu về...
