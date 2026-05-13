@@ -1,5 +1,25 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import FeedbackButtons from './FeedbackButtons';
+
+const mdComponents = (ink) => ({
+  p: ({ children }) => <p style={{ margin: '0 0 8px', lineHeight: 1.75 }}>{children}</p>,
+  ul: ({ children }) => <ul style={{ margin: '4px 0 8px', paddingLeft: 20 }}>{children}</ul>,
+  ol: ({ children }) => <ol style={{ margin: '4px 0 8px', paddingLeft: 20 }}>{children}</ol>,
+  li: ({ children }) => <li style={{ marginBottom: 4, lineHeight: 1.65 }}>{children}</li>,
+  strong: ({ children }) => <strong style={{ fontWeight: 700 }}>{children}</strong>,
+  em: ({ children }) => <em style={{ fontStyle: 'italic' }}>{children}</em>,
+  code: ({ inline, children }) =>
+    inline
+      ? <code style={{ background: 'rgba(0,0,0,0.08)', padding: '1px 5px', borderRadius: 4, fontSize: 13, fontFamily: "'JetBrains Mono', monospace" }}>{children}</code>
+      : <pre style={{ background: 'rgba(0,0,0,0.08)', padding: '10px 14px', borderRadius: 8, overflowX: 'auto', fontSize: 13, fontFamily: "'JetBrains Mono', monospace", margin: '6px 0' }}><code>{children}</code></pre>,
+  blockquote: ({ children }) => <blockquote style={{ borderLeft: '3px solid #999', paddingLeft: 12, margin: '6px 0', color: '#777', fontStyle: 'italic' }}>{children}</blockquote>,
+  h1: ({ children }) => <h1 style={{ fontSize: 18, fontWeight: 700, margin: '8px 0 4px' }}>{children}</h1>,
+  h2: ({ children }) => <h2 style={{ fontSize: 16, fontWeight: 700, margin: '8px 0 4px' }}>{children}</h2>,
+  h3: ({ children }) => <h3 style={{ fontSize: 15, fontWeight: 600, margin: '6px 0 4px' }}>{children}</h3>,
+});
 
 export default function Message({ msg, pal, brand, onChip }) {
   if (msg.role === 'user') {
@@ -51,7 +71,13 @@ export default function Message({ msg, pal, brand, onChip }) {
               color: pal.isDark ? pal.bg : '#fff',
               fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', borderRadius: 4,
             }}>TRẢ LỜI</div>
-            <p style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{msg.text}</p>
+            <ReactMarkdown
+              remarkPlugins={[remarkMath]}
+              rehypePlugins={[rehypeKatex]}
+              components={mdComponents(pal.ink)}
+            >
+              {msg.text}
+            </ReactMarkdown>
           </div>
 
           {msg.suggestions && msg.suggestions.length > 0 && (

@@ -11,7 +11,8 @@ router = APIRouter()
 
 class ChatRequest(BaseModel):
     message: str
-    scope: Optional[str] = "auto" 
+    scope: Optional[str] = "auto"
+    is_first_message: bool = True
 
 class ChatResponse(BaseModel):
     message_id: str
@@ -30,16 +31,16 @@ async def chat_with_bot(request: ChatRequest):
         safe_message = clean_and_validate_input(request.message)
         
         # 3. Gọi hàm RAG (CHỈ GỌI 1 LẦN DUY NHẤT Ở ĐÂY)
-        rag_result = generate_answer(safe_message, request.scope)
+        rag_result = generate_answer(safe_message, request.scope, request.is_first_message)
         scope_result = rag_result["scope"]
         
-        # 4. Tuỳ biến Suggestion theo UI
-        if scope_result == "cnpm":
-            suggestions =["Dấu mốc lịch sử", "Thành tựu nổi bật", "Đời sống sinh viên", "Chuyển sang UIT 🔄"]
-        else:
-            suggestions =["Dấu mốc lịch sử", "Thành tựu nổi bật", "Đời sống sinh viên", "Chuyển sang CNPM 🔄"]
-        
-        # 5. Ghi log thành công (Sửa lại cách truy cập chuỗi trong Dictionary)
+        # 4. Lấy suggestions từ AI (fallback nếu cache cũ không có)
+        suggestions = rag_result.get(
+            "suggestions",
+            ["Kể về lịch sử hình thành?", "Những thành tựu nổi bật?", "Đời sống sinh viên ra sao?"]
+        )
+
+        # 5. Ghi log thành công
         answer_text = rag_result["answer"]
         app_logger.info(f"AI Response: {answer_text[:50]}...") 
         

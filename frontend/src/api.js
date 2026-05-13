@@ -2,11 +2,12 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:8000/api/v1';
 
-export const sendChatMessage = async (message, scope = 'auto') => {
+export const sendChatMessage = async (message, scope = 'auto', isFirstMessage = true) => {
   try {
     const response = await axios.post(`${API_URL}/chat`, {
       message: message,
-      scope: scope
+      scope: scope,
+      is_first_message: isFirstMessage,
     });
     return response.data;
   } catch (error) {

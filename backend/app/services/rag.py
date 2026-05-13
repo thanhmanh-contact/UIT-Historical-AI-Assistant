@@ -10,26 +10,27 @@ def detect_scope(query: str) -> str:
         return "cnpm"
     return "uit" # Mặc định là UIT nếu không detect được
 
-def generate_answer(query: str, current_scope: str = "auto") -> dict:
+def generate_answer(query: str, current_scope: str = "auto", is_first_message: bool = True) -> dict:
     # 1. Xác định scope thực tế
     scope = detect_scope(query) if current_scope == "auto" else current_scope
-    
-    # 2. Kiểm tra Cache (lưu ý truyền thêm scope vào cache)
+
+    # 2. Kiểm tra Cache (chỉ cache khi không phải lần đầu để tránh cached greeting)
     cached_data = get_cached_answer(query, scope)
-    if cached_data:
+    if cached_data and not is_first_message:
         return cached_data
-        
+
     # 3. Embedding & Search theo Scope
     query_vector = get_embedding(query)
     context, sources = search_vector_db(query_vector, scope)
-    
-    # 4. Generate LLM (truyền scope vào để LLM biết nó đang đóng vai ai)
-    answer = generate_text(query, context, scope)
-    
+
+    # 4. Generate LLM
+    llm_result = generate_text(query, context, scope, is_first_message)
+
     result = {
-        "answer": answer,
+        "answer": llm_result["answer"],
+        "suggestions": llm_result["suggestions"],
         "sources": sources,
-        "scope": scope # Trả về scope để Frontend biết đổi màu UI
+        "scope": scope,
     }
     
     set_cached_answer(query, scope, result)

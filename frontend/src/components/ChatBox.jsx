@@ -17,7 +17,8 @@ export default function ChatBox({ pal, brand, suggested }) {
     setInput('');
     addMessage({ role: 'user', text: q });
     setIsLoading(true);
-    const data = await sendChatMessage(q, mode);
+    const isFirst = messages.filter(m => m.role === 'bot').length === 0;
+    const data = await sendChatMessage(q, mode, isFirst);
     setIsLoading(false);
     if (data) {
       addMessage({

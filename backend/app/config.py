@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL: str = "models/gemini-embedding-001"
 
     # --- 2. Cấu hình hệ thống RAG ---
-    MAX_TOKENS: int = 2000
+    MAX_TOKENS: int = 2500
     TEMPERATURE: float = 0.2
     TOP_K_RETRIEVAL: int = 5
     MAX_INPUT_LENGTH: int = 1000
