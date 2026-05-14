@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+google-genai
+faiss-cpu
+numpy
+python-dotenv
+redis
+pydantic_settings

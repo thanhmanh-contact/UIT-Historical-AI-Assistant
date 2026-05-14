@@ -1,0 +1,30 @@
+﻿Chuẩn bị môi trường:
+Tại thư mục backend/, cài các thư viện:
+pip install fastapi uvicorn pydantic google-generativeai faiss-cpu numpy python-dotenv redis
+
+Cấu hình API Key:
+Mở file .env và dán OPENAI_API_KEY của bạn vào.
+
+Chạy file khởi tạo dữ liệu:
+Đứng ở thư mục backend/, chạy lệnh (như hướng dẫn ở câu trả lời trước):
+python scripts/init_data.py
+
+Chạy Server API:
+uvicorn app.main:app --reload --port 8000 
+
+Test API (Swagger UI): 
+http://localhost:8000/docs
+FastAPI tự động tạo sẵn giao diện Swagger. Bạn tìm API POST /api/v1/chat, bấm Try it out, nhập {"message": "UIT thành lập năm nào?"} và xem nó trả kết quả về chuẩn xác nhé!
+
+Bước 2.4: Bật Redis Server trên máy tính của bạn
+Code Python chỉ là "người kết nối", bạn cần phải có một "ứng dụng Redis" đang chạy trên máy (Port 6379).
+Nếu bạn dùng Windows (Có cài Docker Desktop): Mở terminal gõ lệnh sau để tải và chạy Redis trong 1 nốt nhạc:
+docker run --name my-redis -p 6379:6379 -d redis
+Nếu bạn dùng Windows (Không muốn dùng Docker):
+
+Bạn có thể dùng Memurai (Bản Redis tương thích hoàn toàn cho Windows) hoặc cài Redis thông qua WSL2 (Ubuntu trên Windows).
+Nếu bạn dùng Mac:
+
+brew install redis
+brew services start redis
+Xong rồi đó! Bây giờ hệ thống backend của bạn thực sự đã đạt tiêu chuẩn thực tế (Production-grade). Khi bạn chat, câu hỏi đầu tiên sẽ mất khoảng 2-3s (để gọi OpenAI), nhưng nếu bạn F5 và hỏi lại đúng câu đó, kết quả sẽ trả về ngay lập tức (0.01s) nhờ Redis!
