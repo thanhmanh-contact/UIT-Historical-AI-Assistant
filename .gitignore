@@ -1,0 +1,36 @@
+# Global / General
+.env
+.claude/
+**/.claude/
+node_modules/
+*.log
+
+# Backend / Python
+__pycache__/
+**/__pycache__/
+*.pyc
+venv/
+
+# Frontend / Node
+dist
+dist-ssr
+*.local
+
+# Logs
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor & System files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,65 @@
+<svg width="512" height="320" viewBox="0 0 512 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EAF4FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <linearGradient id="robotBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DCEBFF"/>
+    </linearGradient>
+
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#244E91"/>
+      <stop offset="100%" stop-color="#122C5A"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#9BBEFF" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="320" rx="24" fill="url(#bg)"/>
+
+  <!-- UIT Text -->
+  <rect x="405" y="108" width="48" height="28" rx="6" fill="#8DBDFF" opacity="0.9"/>
+  <text x="429" y="126" text-anchor="middle" font-size="14" fill="white" font-family="Arial" font-weight="bold">UIT</text>
+
+  <!-- Robot -->
+  <g filter="url(#shadow)">
+    <!-- Head -->
+    <rect x="150" y="40" width="212" height="150" rx="55" fill="url(#robotBody)"/>
+
+    <!-- Screen -->
+    <rect x="176" y="66" width="160" height="98" rx="30" fill="url(#screen)"/>
+
+    <!-- Eyes -->
+    <circle cx="224" cy="114" r="10" fill="#8BE0FF"/>
+    <circle cx="288" cy="114" r="10" fill="#8BE0FF"/>
+
+    <!-- Smile -->
+    <path d="M224 136C236 150 276 150 288 136" stroke="#8BE0FF" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Antenna -->
+    <rect x="250" y="16" width="12" height="28" rx="6" fill="#4B8BFF"/>
+    <circle cx="256" cy="12" r="10" fill="#4B8BFF"/>
+
+    <!-- Ears -->
+    <rect x="132" y="92" width="20" height="46" rx="10" fill="#4B8BFF"/>
+    <rect x="360" y="92" width="20" height="46" rx="10" fill="#4B8BFF"/>
+
+    <!-- Body -->
+    <rect x="186" y="180" width="140" height="90" rx="40" fill="url(#robotBody)"/>
+
+    <!-- Left Arm -->
+    <path d="M186 206C150 210 138 236 150 252" stroke="#DCEBFF" stroke-width="18" stroke-linecap="round"/>
+
+    <!-- Right Arm -->
+    <path d="M326 206C366 208 388 188 398 166" stroke="#DCEBFF" stroke-width="18" stroke-linecap="round"/>
+
+    <!-- Hand -->
+    <circle cx="402" cy="160" r="12" fill="#4B8BFF"/>
+  </g>
+</svg>
